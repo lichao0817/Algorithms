@@ -3,6 +3,7 @@ package Sort;
 //5:59
 //5:37
 //5:13
+@SuppressWarnings("all")
 public class MergeSort {
 	public static void mergeSort(Comparable[] a)
 	{
@@ -12,9 +13,7 @@ public class MergeSort {
 	private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) 
 	{
 		if (hi <= lo)
-		{
 			return;
-		}
 		int mid = (lo + hi) / 2;
 		sort(a, aux, lo, mid);
 		sort(a, aux, mid+1, hi);

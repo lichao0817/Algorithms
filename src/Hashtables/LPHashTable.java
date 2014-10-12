@@ -1,8 +1,8 @@
 package Hashtables;
-//24·Ö
+
 import java.util.ArrayList;
 
-public class LinearProbingHashST<Key, Value> 
+public class LPHashTable<Key, Value> 
 {
 	private static final int INIT_CAPACITY = 4;
 	private int M;
@@ -10,13 +10,13 @@ public class LinearProbingHashST<Key, Value>
 	private Key[] keys;
 	private Value[] vals;
 	
-	public LinearProbingHashST()
+	public LPHashTable()
 	{
 		this(INIT_CAPACITY);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public LinearProbingHashST (int capacity)
+	public LPHashTable (int capacity)
 	{
 		M = capacity;
 		N = 0;
@@ -53,7 +53,7 @@ public class LinearProbingHashST<Key, Value>
 	
 	private void resize(int capacity) 
 	{
-		LinearProbingHashST<Key, Value> tmp = new LinearProbingHashST<Key, Value>(capacity);
+		LPHashTable<Key, Value> tmp = new LPHashTable<Key, Value>(capacity);
 		for (int i = 0; i < M; i++) 
 		{
 			if (keys[i] != null)
@@ -144,7 +144,7 @@ public class LinearProbingHashST<Key, Value>
 	
 	public static void main(String[] args)
 	{
-		LinearProbingHashST<String, Integer> st = new LinearProbingHashST<String, Integer>();
+		LPHashTable<String, Integer> st = new LPHashTable<String, Integer>();
 		st.put("abc", 1);
 		st.put("bcd", 2);
 		st.put("def", 3);

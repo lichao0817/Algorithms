@@ -107,6 +107,18 @@ public class BinarySearchTree <Value extends Comparable<Value>>
 		preorderTraversal(node.rightChild);
 	}
 	
+	public int height()
+	{
+		return height(head);
+	}
+	
+	private int height(Node node)
+	{
+		if (node == null)
+			return 0;
+		return 1 + Math.max(height(node.leftChild), height(node.rightChild));
+	}
+	
 	public static void main(String[] args)
 	{
 		BinarySearchTree<Integer> t = new BinarySearchTree<Integer>();
@@ -119,5 +131,6 @@ public class BinarySearchTree <Value extends Comparable<Value>>
 		System.out.println("After Removal: ");
 		t.delete(5);
 		t.inOrderTraversal();
+		System.out.println(t.height());
 	}
 }

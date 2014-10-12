@@ -5,6 +5,7 @@ import java.util.Random;
 //4:58
 //4:18
 //4:16
+@SuppressWarnings("all")
 public class QuickSort 
 {
 	public static void shuffle(Comparable[] a)

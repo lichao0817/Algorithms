@@ -5,6 +5,7 @@ import java.util.Stack;
 
 public class Questions 
 {
+	String a = "aaa";
 	public static boolean isSubString(String str, String find)
 	{
 		if (find.length() > str.length())
@@ -113,8 +114,7 @@ public class Questions
 
 	public static void main(String[] args)
 	{
-		int[] a = {1,1,2,4,3,2,4};
-		System.out.println(odd(a));
-		Stack<Integer> stack = new Stack<Integer>();
+		Questions questions = new Questions();
+		System.out.println(questions.a);
 	}
 }
