@@ -107,6 +107,16 @@ public class MinHeap <Value extends Comparable<Value>>
 		return vals[i].compareTo(vals[j]) < 0? i:j;
 	}
 	
+	public int size()
+	{
+		return size;
+	}
+	
+	public boolean isEmpty()
+	{
+		return size == 0;
+	}
+	
 	public void traversal()
 	{
 		for (int i = 1; i <= size; i++)
@@ -128,5 +138,6 @@ public class MinHeap <Value extends Comparable<Value>>
 		heap.traversal();
 		heap.removeMin();
 		heap.traversal();
+		System.out.println(heap.size());
 	}
 }

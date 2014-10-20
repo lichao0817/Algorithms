@@ -1,7 +1,8 @@
 package Greedy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 import Graph.Edge;
 import Graph.Graph;
@@ -11,16 +12,16 @@ public class Kruskal
 {
 	private UnionFind unionFind;
 	private Graph graph;
-	private ArrayList<Edge> mst;
+	private List<Edge> mst;
 	public Kruskal(Graph graph)
 	{
 		this.graph = graph;
 		unionFind = new UnionFind(graph.V());
 	}
 	
-	private ArrayList<Edge> mst()
+	private List<Edge> mst()
 	{
-		ArrayList<Edge> list = new ArrayList<Edge>();
+		List<Edge> list = new LinkedList<Edge>();
 		Edge[] edges = graph.edges();
 		Arrays.sort(edges);
 		for (int i = 0; i < edges.length; i++)
@@ -38,7 +39,8 @@ public class Kruskal
 	
 	public void print()
 	{
-		mst = mst();
+		if (mst == null)
+			mst = mst();
 		for (int i = 0; i < mst.size(); i++)
 		{
 			System.out.println(mst.get(i).start + " -- " + mst.get(i).end + " == " + mst.get(i).weight);

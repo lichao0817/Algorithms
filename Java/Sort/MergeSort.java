@@ -1,5 +1,7 @@
 package Sort;
 
+import sun.misc.Sort;
+
 //5:59
 //5:37
 //5:13
@@ -16,7 +18,7 @@ public class MergeSort {
 			return;
 		int mid = (lo + hi) / 2;
 		sort(a, aux, lo, mid);
-		sort(a, aux, mid+1, hi);
+		sort(a, aux, mid + 1, hi);
 		merge(a, aux, lo, hi);
 	}
 	private static void merge(Comparable[] a, Comparable[] aux, int lo, int hi) 
@@ -26,12 +28,13 @@ public class MergeSort {
 		int j = mid + 1;
 		for (int k = lo; k <= hi; k++)
 		{
-			aux[k] = a[k]; 
+			aux[k] = a[k];
 		}
+		
 		for (int k = lo; k <= hi; k++)
 		{
-			if (i > mid)						{	a[k] = aux[j++];	}
-			else if (j > hi)					{	a[k] = aux[i++];	}
+			if (i > mid)							{	a[k] = aux[j++];	}
+			else if (j > hi)						{	a[k] = aux[i++];	}
 			else if (aux[i].compareTo(aux[j]) < 0)	{	a[k] = aux[i++];	}
 			else 									{	a[k] = aux[j++];	}
 		}

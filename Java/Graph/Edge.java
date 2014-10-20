@@ -20,4 +20,9 @@ public class Edge implements Comparable<Edge>
 			return -1;
 		return 0;
 	}
+	
+	public String toString()
+	{
+		return start + " -- " + end + " == " + weight;
+	}
 }
